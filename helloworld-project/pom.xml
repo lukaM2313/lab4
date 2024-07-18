@@ -32,6 +32,10 @@
     <description>JBoss EAP Quickstarts Parent</description>
     <url>http://www.jboss.org/jdf/quickstarts/get-started/</url>
 
+    <modules>
+        <module>helloworld-ws</module> 
+    </modules>
+
     <licenses>
         <license>
             <name>Apache License, Version 2.0</name>

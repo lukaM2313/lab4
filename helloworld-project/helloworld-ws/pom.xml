@@ -25,7 +25,7 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>helloworld-ws</artifactId>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>${qs.name.prefix} helloworld-ws</name>
     <description>This project demonstrates a Hello World JAX-WS web service</description>
 
@@ -84,7 +84,7 @@
             <artifactId>jaxws-api</artifactId>
             <version>2.2.9</version>
         </dependency>
-        
+
     </dependencies>
 
     <build>

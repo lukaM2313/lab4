@@ -84,6 +84,21 @@
     <build>
         <!-- Set the name of the WAR, used as the context root when the app is deployed -->
         <finalName>${project.artifactId}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <!-- Update this to your main class -->
+                            <mainClass>org.jboss.as.quickstarts.wshelloworld.HelloWorldServiceImpl</mainClass> 
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 
 </project>

@@ -9,6 +9,6 @@
   <packaging>pom</packaging>
 
   <modules>
-    <module>helloworld-project</module>
+    <module>quickstart-parent</module>
   </modules>
 </project>

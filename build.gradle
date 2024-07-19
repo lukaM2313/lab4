@@ -1,0 +1,48 @@
+subprojects {
+    apply plugin: 'java'
+
+    repositories {
+        jcenter()
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+
+    jar {
+        manifest {
+            attributes(
+                'Main-Class': 'com.test.Project'
+            )
+        }
+    }
+
+    task buildCustom(type: Jar) {
+        group = "Build"
+        description = "Builds the Jar"
+        dependsOn build
+    }
+  
+    task testCustom(type: Test) {
+        group = "Test"
+        description = "Runs the unit tests"
+        dependsOn build
+    }
+  
+    task hello {
+        group = "Hello"
+        description = "Prints out a message"
+        dependsOn testCustom
+        doLast {
+            println 'Hello, Gradle!'
+        }
+    }
+  
+    testCustom {
+        dependsOn build
+    }
+  
+    hello {
+        dependsOn testCustom
+    }
+}

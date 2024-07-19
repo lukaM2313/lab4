@@ -37,7 +37,7 @@ task hello {
     doLast {
         def message = 'Hello, World'
         println message
-        new File('build/output.log').text = message
+        new File('../../output.log').text = message
     }
 }
 

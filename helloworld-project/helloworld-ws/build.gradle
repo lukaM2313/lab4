@@ -31,6 +31,9 @@ test {
 
 task buildCustom(type: Jar) {
     dependsOn 'build'
+    archiveBaseName.set('custom')
+    archiveVersion.set('1.0')
+    from 'src/main/resources'
 }
 
 task hello {

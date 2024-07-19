@@ -35,6 +35,9 @@ task buildCustom(type: Jar) {
 
 task hello {
     doLast {
-        println 'Hello, Gradle!'
+        def message = 'Hello, World'
+        println message
+        new File('build/hello.log').text = message
     }
 }
+

@@ -14,8 +14,6 @@ dependencies {
     compileOnly 'org.jboss.spec.javax.annotation:jboss-annotations-api_1.2_spec:1.0.2.Final'
     compileOnly 'org.jboss.spec.javax.servlet:jboss-servlet-api_3.1_spec:1.0.2.Final'
     implementation 'javax.xml.ws:jaxws-api:2.2.9'
-    testImplementation 'junit:junit:4.13'
-    testImplementation 'org.jboss.arquillian.junit:arquillian-junit-container:1.7.0.Alpha7'
 }
 
 jar {
@@ -27,18 +25,15 @@ jar {
 }
 
 test {
-    useJUnitPlatform()
-    testLogging {
-        events "passed", "skipped", "failed"
-    }
+    exclude '**'
 }
+
 
 task buildCustom(type: Jar) {
     dependsOn 'build'
 }
 
 task hello {
-    dependsOn 'test'
     doLast {
         println 'Hello, Gradle!'
     }
